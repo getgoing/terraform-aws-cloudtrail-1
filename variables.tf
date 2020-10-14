@@ -16,6 +16,18 @@ variable "include_global_service_events" {
   description = "Specifies whether the trail is publishing events from global services such as IAM to the log files"
 }
 
+variable "enable_insights" {
+  type        = bool
+  default     = false
+  description = "Enable Insights for the trail"
+}
+
+variable "insight_selector" {
+  type = string
+  default = ""
+  description = "Insight type to select for. See: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudtrail#insight-selector-arguments for details on supported values"
+}
+
 variable "enable_logging" {
   type        = bool
   default     = true
