@@ -6,7 +6,7 @@ variable "enable_log_file_validation" {
 
 variable "is_multi_region_trail" {
   type        = bool
-  default     = false
+  default     = true
   description = "Specifies whether the trail is created in the current region or in all regions"
 }
 
@@ -76,4 +76,10 @@ variable "is_organization_trail" {
   type        = bool
   default     = false
   description = "The trail is an AWS Organizations trail"
+}
+
+variable "sns_topic_name" {
+  type        = string
+  description = "Specifies the name of the Amazon SNS topic defined for notification of log file delivery"
+  default     = null
 }
